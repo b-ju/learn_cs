@@ -12,7 +12,7 @@ a better understanding of some hard topics.
   - https://archive.org/details/ucberkeley_webcast_Wp8oiO_CZZE
   - https://www.coursera.org/lecture/data-structures/dynamic-arrays-EwbnV
   - https://www.youtube.com/watch?v=1jtrQqYpt7g
- - [ ] Implement a vector
+ - [X] Implement a vector
    - [X] Practice coding using arrays and pointers, and pointer math to jump to an index instead of using indexing.
    - [X] New raw data array with allocated memory
         *can allocate int array under the hood, just not use its features
@@ -22,19 +22,19 @@ a better understanding of some hard topics.
    - [X] is_empty()
    - [X] at(index) - returns item at given index, blows up if index out of bounds
    - [X] push(item)
-   - [ ] insert(index, item) - inserts item at index, shifts that index's value and trailing elements to the right
-   - [ ] prepend(item) - can use insert above at index 0
-   - [ ] pop() - remove from end, return value
+   - [X] insert(index, item) - inserts item at index, shifts that index's value and trailing elements to the right
+   - [X] prepend(item) - can use insert above at index 0
+   - [X] pop() - remove from end, return value
    - [X] delete(index) - delete item at index, shifting all trailing elements left
-   - [ ] remove(item) - looks for value and removes index holding it (even if in multiple places)
-   - [ ] find(item) - looks for value and returns first index with that value, -1 if not found
+   - [X] remove(item) - looks for value and removes index holding it (even if in multiple places)
+   - [X] find(item) - looks for value and returns first index with that value, -1 if not found
    - [X] resize(new_capacity) // private function
         *when you reach capacity, resize to double the size
         *when popping an item, if size is 1/4 of capacity, resize to half
-    - [ ] Time
+    - [X] Time
         *O(1) to add/remove at end (amortized for allocations for more space), index, or update
         *O(n) to insert/remove elsewhere
-    - [ ] Space
+    - [X] Space
         *contiguous in memory, so proximity helps performance
         *space needed = (array capacity, which is >= n) * size of item, but even if 2n, still O(n)
         
