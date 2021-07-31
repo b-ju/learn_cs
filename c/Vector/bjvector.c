@@ -53,7 +53,7 @@ int size(BVector* vectptr){
 	return vectptr->size;
 }
 
-void push(BVector* vectptr, int number){
+void bvect_push(BVector* vectptr, int number){
 	*(vectptr->data + vectptr->size) = number;
 	vectptr->size++;
 	if(vectptr->size == vectptr->capacity){
@@ -96,7 +96,7 @@ void downsize(BVector* vectptr){
 	vectptr->capacity = newsize;
 }
 
-void bvect_remove(BVector* vectptr, int index){
+void bvect_delete(BVector* vectptr, int index){
 	if( index >= vectptr->size ){
 		printf("index out of range\n");	
 	} else {
@@ -114,8 +114,29 @@ void bvect_remove(BVector* vectptr, int index){
 	}		
 }
 
+void bvect_insert(BVector* vectptr, int index, int number){
+	if( index > vectptr->size ){
+		printf("index out of range\n");
+	} else {
+		++vectptr->size;
+		int* data = vectptr->data + vectptr->size;
+		int* prev = data - 1;	
+		for( int i = vectptr->size-1; i > index; --i ){
+			*data = *prev;
+			data = prev;
+			--prev;	
+		}
+		*data = *prev;
+		*prev = number;
+		if( vectptr->capacity <= vectptr->size ){
+			upsize(vectptr);
+		}
+	}	
+}
+
 void bvect_print(BVector* vectptr){
 	printf("-------------------------\n");
+	printf(" Capacity = %d, Size = %d\n", capacity(vectptr), size(vectptr));
 
 	for(int i = 0; i < vectptr->size; i++){
 		printf("Index %d : %d\n", i, at(vectptr, i));
@@ -124,43 +145,87 @@ void bvect_print(BVector* vectptr){
 	printf("-------------------------\n");
 }
 
+int bvect_find(BVector* vectptr, int number){
+	int* data = vectptr->data;
+	for(int i = 0; i < vectptr->size; ++i){
+		if( *data == number){
+			return i;
+		}
+		++data;
+	}		
+	return -1;
+}
+
+void bvect_remove_all(BVector* vectptr, int number){
+	int found = 0;
+	found = bvect_find(vectptr, number);
+	while(found != -1){
+		bvect_delete(vectptr, found); 
+		found = bvect_find(vectptr, number);
+	}
+}
+
+
+void bvect_prepend(BVector* vectptr, int number){
+	bvect_insert(vectptr, 0, number);
+}
+
+int bvect_pop(BVector* vectptr){
+	int pop_val = at(vectptr, vectptr->size - 1);
+	bvect_delete(vectptr, vectptr->size - 1);
+	return pop_val;
+}
+
 void run_bjvector_tests(){
 	BVector* my_vector = bvect_new(3);
-	push(my_vector, 4);
-	push(my_vector, 5);
-	push(my_vector, 3);
-	push(my_vector, 2);
-	push(my_vector, 1);
+	bvect_push(my_vector, 4);
+	bvect_push(my_vector, 5);
+	bvect_push(my_vector, 5);
+	bvect_push(my_vector, 5);
+	bvect_push(my_vector, 1);
 	
 	bvect_print(my_vector);
-	printf(" Capacity = %d, Size = %d\n ", capacity(my_vector), size(my_vector));
 
 	int num_vals = 21;
-
-	printf(" Pushing %d  more values...\n", num_vals);
-
+	printf(" bvect_pushing %d  more values...\n", num_vals);
 	for(int i = 0; i < num_vals; i++){
-		push(my_vector, i);
+		bvect_push(my_vector, i);
 	}
 
 	bvect_print(my_vector);
-	printf(" Capacity = %d, Size = %d\n ", capacity(my_vector), size(my_vector));
-	printf(" Removing %d from index 4 to %d.\n", num_vals, 3 + num_vals);
 
+	num_vals = 10;
+	printf(" Removing %d from index 4 to %d.\n", num_vals, 3 + num_vals);
 	for(int i = num_vals; i > 0; i--){
-		bvect_remove(my_vector, 4);
+		bvect_delete(my_vector, 4);
 	} 
 
 	bvect_print(my_vector);
+	printf(" Popping 3 values...\n");
 
-	push(my_vector, 4);
-	push(my_vector, 5);
-	push(my_vector, 3);
-	push(my_vector, 2);
-	push(my_vector, 1);
+	bvect_pop(my_vector);
+	bvect_pop(my_vector);
+	bvect_pop(my_vector);
+	bvect_print(my_vector);
 
-	printf(" Capacity = %d, Size = %d\n ", capacity(my_vector), size(my_vector));
-	printf(" Value at index 2 = %d\n", at(my_vector,2));
+	printf(" Inserting 757575 into index 5\n");
+	
+	bvect_insert(my_vector, 5, 757575);
+	bvect_print(my_vector);
+	
+	printf(" Prepending 42.\n");
+	
+	bvect_prepend(my_vector, 42);
+	bvect_print(my_vector);	
+
+	printf(" Searching for value 999. %d\n", bvect_find(my_vector, 999));
+	printf(" Searching for value 42. %d\n", bvect_find(my_vector, 42));
+	printf(" Searching for value 10. %d\n", bvect_find(my_vector, 10));
+	printf(" Searching for value 17. %d\n", bvect_find(my_vector, 17));
+
+	printf(" Removing all 5s\n");
+	bvect_remove_all(my_vector, 5);
+	bvect_print(my_vector);
 
 	free_bvect(my_vector);
 	printf("END TESTS\n");
