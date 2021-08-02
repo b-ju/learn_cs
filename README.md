@@ -38,7 +38,7 @@ a better understanding of some hard topics.
         *contiguous in memory, so proximity helps performance
         *space needed = (array capacity, which is >= n) * size of item, but even if 2n, still O(n)
 * Linked List
-    - [ ] Watch
+    - [X] Watch
 	- https://www.coursera.org/lecture/data-structures/singly-linked-lists-kHhgK
 	- https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0
 	- https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w
@@ -46,7 +46,7 @@ a better understanding of some hard topics.
 	- https://www.coursera.org/lecture/data-structures-optimizing-performance/in-the-real-world-lists-vs-arrays-QUaUd
 	- https://www.youtube.com/watch?v=YQs6IC-vgmo
 	- https://www.eskimo.com/~scs/cclass/int/sx8.html
-    - [ ] Implement
+    - [X] Implement
 * Stack
     - [ ] Watch
     - [ ] Implement
