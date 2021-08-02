@@ -44,7 +44,7 @@ a better understanding of some hard topics.
 	- https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w
 	- https://www.youtube.com/watch?v=QN6FPiD0Gzo
 	- https://www.coursera.org/lecture/data-structures-optimizing-performance/in-the-real-world-lists-vs-arrays-QUaUd
-	- [Why linked lists are always slower than vectors](https://www.youtube.com/watch?v=YQs6IC-vgmo)
+	- [Why linked lists are slower than vectors(cache misses)](https://www.youtube.com/watch?v=YQs6IC-vgmo)
 	- https://www.eskimo.com/~scs/cclass/int/sx8.html
     - [X] Implement
 * Stack
