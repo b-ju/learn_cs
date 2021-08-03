@@ -17,10 +17,10 @@ a better understanding of some hard topics.
 # Data Structures
 **Arrays**
 - [X] Watch
-  - https://www.coursera.org/lecture/data-structures/arrays-OsBSF
-  - https://archive.org/details/ucberkeley_webcast_Wp8oiO_CZZE
-  - https://www.coursera.org/lecture/data-structures/dynamic-arrays-EwbnV
-  - https://www.youtube.com/watch?v=1jtrQqYpt7g
+  - [Arrays Cousera](https://www.coursera.org/lecture/data-structures/arrays-OsBSF)
+  - [Arrays Berkeley](https://archive.org/details/ucberkeley_webcast_Wp8oiO_CZZE)
+  - [Dynamic Array Cousera](https://www.coursera.org/lecture/data-structures/dynamic-arrays-EwbnV)
+  - [Jagged Arrays](https://www.youtube.com/watch?v=1jtrQqYpt7g)
  - [X] Implement a vector
    - [X] Practice coding using arrays and pointers, and pointer math to jump to an index instead of using indexing.
    - [X] New raw data array with allocated memory
@@ -48,14 +48,15 @@ a better understanding of some hard topics.
         *space needed = (array capacity, which is >= n) * size of item, but even if 2n, still O(n)
 * Linked List
     - [X] Watch
-	- https://www.coursera.org/lecture/data-structures/singly-linked-lists-kHhgK
-	- https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0
-	- https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w
-	- https://www.youtube.com/watch?v=QN6FPiD0Gzo
-	- https://www.coursera.org/lecture/data-structures-optimizing-performance/in-the-real-world-lists-vs-arrays-QUaUd
+	- [Singly-Linked Lists](https://www.coursera.org/lecture/data-structures/singly-linked-lists-kHhgK)
+	- [Linked-Lists P1 Berkeley](https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0)
+	- [Linked-Lists P2](https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w)
+	- [Linked Data Structures in C](https://www.youtube.com/watch?v=QN6FPiD0Gzo)
+	- [In the Real World: List v Arrays](https://www.coursera.org/lecture/data-structures-optimizing-performance/in-the-real-world-lists-vs-arrays-QUaUd)
 	- [Why linked lists are slower than vectors(cache misses)](https://www.youtube.com/watch?v=YQs6IC-vgmo)
-	- https://www.eskimo.com/~scs/cclass/int/sx8.html
+	- [Pointers to Pointers](https://www.eskimo.com/~scs/cclass/int/sx8.html)
     - [X] Implement
+        - [X] C 
 * Stack
     - [ ] Watch
     - [ ] Implement
