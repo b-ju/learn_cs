@@ -5,6 +5,15 @@ important concepts. This is due to lack of repitition and a lack of organization
 of my knowledge. This repository is an attempt to remedy these issues and build
 a better understanding of some hard topics.
 
+# Reading List
+- [ ] Clean Code: A Handbook of Agile Software Craftsmanship - Martin
+- [ ] Operation System Concepts - 10th Edition
+- [ ] Algorithm Design - Kleiberg, Tardos
+- [X] Introduction To Computing Systems: From Bits And Gates To C And Beyond - 2nd Edition
+- [X] Computer Security: Principles and Practice - 3rd Edition
+- [X] A First Course in Linear Algebra - Kuttler
+- [X] C++ Primer - 5th Edition
+
 # Data Structures
 **Arrays**
 - [X] Watch
