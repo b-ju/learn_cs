@@ -69,4 +69,6 @@ a better understanding of some hard topics.
     - [ ] Watch
     - [ ] Implement
       
-      
+* Heap
+    - [X] Watch
+    - [X] Implement      
