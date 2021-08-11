@@ -53,7 +53,6 @@ def right(i):
 
 def heapify(A, i, n=None):
 
-    count_heapify() # This MUST be the first line of the heapify function, don't change it.
     if n is None:
         n = len(A)
     if not(i < n):
@@ -106,6 +105,14 @@ def heapInsert(A, v):
             return
         else:
             parentIndex = parent(vIndex)
+
+
+def heapSort(A):
+    buildHeap(A)
+    sortedList = []
+    for i in range(len(A)-1):
+        sortedList.append(heapExtractMin(A))
+    return sortedList
 
 
 def printCompleteTree(A):
@@ -177,13 +184,19 @@ def main():
     buildHeap(A)
     print("Heap size 20:")
     printCompleteTree(A)
+    A = heapSort(A)
+    print(*A)
 
     A = shuffled_list(20, 0)
     report_counts_on_basic_ops(A)
+    L = heapSort(A)
+    print(*L)
 
     A = shuffled_list(30, 0)
     report_counts_on_basic_ops(A)
-
+    L = heapSort(A)
+    print(*L)
+"""
     A = shuffled_list(400, 0)
     report_counts_on_basic_ops(A)
     
@@ -192,6 +205,6 @@ def main():
 
     A = shuffled_list(100000, 0)
     report_counts_on_basic_ops(A, 3, 3)
-
+"""
 if __name__ == "__main__":
     main()

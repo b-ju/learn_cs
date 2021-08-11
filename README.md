@@ -71,4 +71,11 @@ a better understanding of some hard topics.
       
 * Heap
     - [X] Watch
+        - [Heap visualization](https://www.cs.usfca.edu/~galles/visualization/Heap.html)
+        - [Proof of O(N) Time Complexity](https://www.youtube.com/watch?v=VkKmmwzfIG4&ab_channel=TECHDOSE)
     - [X] Implement      
+        - [X] Build Heap - Builds a Minimum Heap from a list, calls Heapify from last non-leaf node. O(n)
+        - [X] Heapify() - Recursively shift smaller elements up. O(log n)
+        - [X] Insert() - Place an element as a leaf and heapify until heap property is returned. O(log n) 
+        - [X] Sort - First build heap then remove roots n times. O(n log n)
+        - [X] Extract Min - Return the root element, shift other element to maintain heap property. O(log n)
