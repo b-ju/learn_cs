@@ -73,7 +73,7 @@ def heapify(A, i, n=None):
 
     if indexSmallestNode is not i:
         swap(A, i, indexSmallestNode)
-        heapify(A, indexSmallestNode)
+        heapify(A, indexSmallestNode, n)
 
 
 def buildHeap(A):
@@ -98,7 +98,7 @@ def heapInsert(A, v):
     vIndex = len(A) - 1
     parentIndex = parent(vIndex)
 
-    while A[parentIndex] > v :
+    while A[parentIndex] > v:
         swap(A, parentIndex, vIndex)
         vIndex = parentIndex
         if vIndex == 0:
@@ -106,13 +106,16 @@ def heapInsert(A, v):
         else:
             parentIndex = parent(vIndex)
 
-
+# results in a sorted list starting with largest element
 def heapSort(A):
     buildHeap(A)
-    sortedList = []
-    for i in range(len(A)-1):
-        sortedList.append(heapExtractMin(A))
-    return sortedList
+    n = len(A)
+    while n > 0:
+        swap(A, 0, n-1)
+        n -= 1
+        heapify(A, 0, n-1)
+
+
 
 
 def printCompleteTree(A):
@@ -172,6 +175,9 @@ def report_counts_on_basic_ops(A, loop_extracts=1, loop_inserts=1):
         heapInsert(A, new_number)
         print("heapInsert(A, {}):       \t".format(new_number), current_counts())
 
+    reset_counts()
+    heapSort(A)
+    print("heapSort(A):             \t", current_counts())
 
 def main():
     global db
@@ -181,22 +187,24 @@ def main():
     A = shuffled_list(20, 0)
     print("Complete Tree size 20:")
     printCompleteTree(A)
+    print("Heap using insert")
+
     buildHeap(A)
     print("Heap size 20:")
     printCompleteTree(A)
-    A = heapSort(A)
+    heapSort(A)
     print(*A)
 
     A = shuffled_list(20, 0)
     report_counts_on_basic_ops(A)
-    L = heapSort(A)
-    print(*L)
+    heapSort(A)
+    print(*A)
 
     A = shuffled_list(30, 0)
     report_counts_on_basic_ops(A)
-    L = heapSort(A)
-    print(*L)
-"""
+    heapSort(A)
+    print(*A)
+
     A = shuffled_list(400, 0)
     report_counts_on_basic_ops(A)
     
@@ -205,6 +213,6 @@ def main():
 
     A = shuffled_list(100000, 0)
     report_counts_on_basic_ops(A, 3, 3)
-"""
+
 if __name__ == "__main__":
     main()
