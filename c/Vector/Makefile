@@ -13,7 +13,7 @@ all: $(OBJS)
 main.o:/Users/benjurenka/learn_cs/c/Vector/main.c
 	$(CC)  $(FLAGS) main.c, 
 
-bjvector.o: /Users/benjurenka/learn_cs/c/Vector/bjvector.c
+bjvector.o:/Users/benjurenka/learn_cs/c/Vector/bjvector.c
 	$(CC) $(FLAGS) bjvector.c 
 
 

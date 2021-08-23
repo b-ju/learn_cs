@@ -1,0 +1,30 @@
+FIB[86180] : Number of terms in fibonacii series is 5.
+FIB[86180] The first 5 numbers of the fibonacci series are:
+0, 1, 1, 2, 3
+PRIME[86181] : The first 5 prime numbers are:
+2, 3, 5, 7, 11, 
+TOTAL[86182] : sum = 15
+FIB[86183] : Number of terms in fibonacii series is 10.
+FIB[86183] The first 10 numbers of the fibonacci series are:
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+PRIME[86184] : The first 10 prime numbers are:
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 
+TOTAL[86185] : sum = 55
+Starter[86179] : Forked process with ID 86180.
+Starter[86179] : Waiting for process [86180].
+Starter: Child process 86180 returned 3.
+Starter[86179] : Forked process with ID 86181.
+Starter[86179] : Waiting for process [86181].
+Starter: Child process 86181 returned 11.
+Starter[86179] : Forked process with ID 86182.
+Starter[86179] : Waiting for process [86182].
+Starter: Child process 86182 returned 15.
+Starter[86179] : Forked process with ID 86183.
+Starter[86179] : Waiting for process [86183].
+Starter: Child process 86183 returned 34.
+Starter[86179] : Forked process with ID 86184.
+Starter[86179] : Waiting for process [86184].
+Starter: Child process 86184 returned 29.
+Starter[86179] : Forked process with ID 86185.
+Starter[86179] : Waiting for process [86185].
+Starter: Child process 86185 returned 55.
